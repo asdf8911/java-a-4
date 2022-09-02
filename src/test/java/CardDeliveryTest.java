@@ -18,11 +18,6 @@ import static org.openqa.selenium.Keys.BACK_SPACE;
 
 public class CardDeliveryTest {
 
-    @BeforeAll
-    static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
-    }
-
     public String dataGenerate(int day) {
         return LocalDate.now().plusDays(day).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
@@ -30,7 +25,7 @@ public class CardDeliveryTest {
     @Test
     void testForm() {
 
-        Configuration.holdBrowserOpen = true; // Чтобы браузер не закрывался
+        // Configuration.holdBrowserOpen = true; // Чтобы браузер не закрывался
 
         open("http://localhost:9999"); // Перейти на страницу
         // $ - по CSS. $x - по xPath
